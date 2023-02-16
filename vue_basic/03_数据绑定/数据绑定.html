@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>初始Vue</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <!-- 准备一个容器 -->
+    <!-- v-bind是单向的 -->
+    <div id="root">
+      单向数据绑定：<input type="text" v-bind:value="name" />
+      <!-- v-model只能应用在表单/输入类型上 -->
+      双向数据绑定：<input type="text" v-model:value="name" />
+    </div>
+
+    <script type="text/javascript">
+      Vue.config.productionTip = false; // 取消开发者环境的错误提示
+
+      // 创建Vue实例 一切的开端
+      new Vue({
+        el: "#root",
+        data: {
+          name: "jack",
+        },
+      });
+    </script>
+  </body>
+</html>
