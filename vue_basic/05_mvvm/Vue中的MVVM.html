@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>理解mvvm</title>
+    <!-- 引入vue -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+  </head>
+  <body>
+    <!-- 准备一个容器 -->
+    <!-- 视图 view -->
+    <div id="root">
+      <h1>学校名字：{{name}}</h1>
+      <h1>学校地址：{{address}}</h1>
+    </div>
+
+    <script type="text/javascript">
+      Vue.config.productionTip = false; // 取消开发者环境的错误提示
+
+      // 创建Vue实例 一切的开端
+      // ViewModel
+      const vm = new Vue({
+        el: "#root", // el用于指定当前vue实例为哪个容器服务，值通常为css选择器字符串
+        // Model
+        data: {
+          name: "zzmax", // data中用于存储数据，数据供el所指定的容器去使用，
+          address: "ks",
+        },
+      });
+    </script>
+  </body>
+</html>
